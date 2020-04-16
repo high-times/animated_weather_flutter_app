@@ -2,8 +2,10 @@ import 'package:animated_weather_flutter_app/models/models.dart';
 import 'package:animated_weather_flutter_app/repositories/weatherRepository.dart';
 import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 
-import 'blocs.dart';
+part 'weatherEvent.dart';
+part 'weatherState.dart';
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   final WeatherRepository weatherRepository;
@@ -28,7 +30,8 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     try {
       final Weather weather = await weatherRepository.getWeather(event.city);
       yield WeatherLoaded(weather: weather);
-    } catch (_) {
+    } catch (e) {
+      print(e);
       yield WeatherError();
     }
   }

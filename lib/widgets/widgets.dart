@@ -5,3 +5,4 @@ export 'combinedWeatherTemperature.dart';
 export 'weatherConditions.dart';
 export 'citySelection.dart';
 export 'temperature.dart';
+export 'settings.dart';

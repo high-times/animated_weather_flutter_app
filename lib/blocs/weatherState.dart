@@ -1,7 +1,4 @@
-import 'package:animated_weather_flutter_app/models/weather.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
+part of 'weatherBloc.dart';
 
 abstract class WeatherState extends Equatable {
   const WeatherState();
